@@ -1,0 +1,584 @@
+/* ---navbar--- */
+.navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    z-index: 999;
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background-color);
+}
+
+.navbar__logo {
+    width: 24%;
+    height: 100%;
+    padding: 0 32px;
+    margin-left: 32px;
+    display: flex;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.navbar__menu {
+    width: 68%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    z-index: 1;
+    background-color: var(--background-color);
+}
+
+.navbar__item {
+    list-style: none;
+    margin:0 16px;
+    padding:0 4px;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: bold;
+    transition: all .4s;
+}
+.navbar__link:hover {
+    border-bottom: 2px solid var(--hight-color);
+    color: var(--hight-color);
+}
+
+.navbar__btn {
+    border: 2px solid var(--black-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 99;
+    width: 100px;
+    height: 40px;
+    margin-right: 8px;
+    font-size: 18px;
+    background: var(--secondary-color);
+    cursor: pointer;
+    color: var(--white-color);
+    font-family:'Nunito';
+    border-radius: 8px;
+}
+.navbar__btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hight-color);
+    transform-origin: right bottom;
+    transform: translateX(100%);
+    z-index: -1;
+    transition: all 1s ;
+}
+.navbar__btn:hover:before {
+    transform: translateX(0%);
+}
+
+.navbar__mode {
+    width: 8%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__mode .dark {
+    font-size:24px;
+    color: var(--primary-color);
+    transition: all 0.4s;
+}
+
+.navbar__mode:hover .dark {
+    transform:rotate(180deg);
+}
+/* ---navbar--- */
+
+/* ---home--- */
+.home {
+    width: 100%;
+    height:100vh;
+    margin-top: 80px;
+    background-color: green;
+    background-image: url('./image/background/bg1.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.home__container {
+    width: 50%;
+    padding: 240px 0 0 64px;
+    color: var(--black-color);
+}
+
+.home__title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.home__description {
+    font-size: 16px;
+}
+
+.home__buy {
+    width:140px;
+    height:80px;
+    margin-top: 32px;
+    border-radius: 4px;
+    border:4px solid #000;
+    background:linear-gradient(to right,
+    var(--primary-color),var(--secondary-color),
+    var(--hight-color));
+    font-size:24px;
+    position: relative;
+    overflow: hidden;
+    color: var(--white-color);
+    z-index: 9;
+}
+  
+.home__buy:before {
+    content: '';
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:var(--hight-color);
+    position: absolute;
+    transition: all 1s ;
+    z-index: -1;
+    transform: translateX(100%);
+    transform-origin: right bottom;
+}
+  
+.home__buy:hover {
+    color: #212121;
+}
+.home__buy:hover:before {
+       transform: translateX(0%);
+       z-index: -1;
+}
+/* ---home--- */
+
+/* ---popular--- */
+.popular {
+    width: 100%;
+    height: 100vh;
+}
+
+.popular__box {
+    margin: 64px auto;
+    width: 840px;
+    height: 600px;
+    background-color:var(--background-color);
+    border-radius: 8px;
+}
+
+.popular__title {
+    padding: 8px;
+    text-align: center;
+    font-size:40px;
+    color: var(--hight-color);
+}
+
+.popular__button--container {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popular__btn {
+    margin: 4px;
+    background: var(--white-color);
+}
+
+.popular__btn:hover,.popular__btn.active {
+    background: var(--hight-color);
+}
+
+.popular__list {
+    width: 100%;
+    height: 390px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.popular__list::-webkit-scrollbar {
+    width: 8px;
+}
+.popular__list::-webkit-scrollbar-thumb {
+    background-color:var(--primary-color);
+    border-radius:8px;
+}
+.popular__list::-webkit-scrollbar-track {
+    background-color: rgb(15, 13, 13);
+    border-radius:8px;
+    overflow: hidden;
+}
+
+.popular__item {
+    width: 180px;
+    height: 180px;
+    margin: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.popular__item:hover .popular__info {
+    top: 0;
+}
+
+.popular__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;  
+}
+
+.popular__info {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 9;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.8);
+    transition: all 0.2s ease;
+}
+
+.popular__name {
+    font-size:24px;
+    margin: 24px 0 16px 0;
+}
+
+.popular__price {
+    margin-bottom: 4px;
+}
+/* ---popular--- */
+
+/* ---content--- */
+.about {
+    padding-top: 10rem;
+}
+#content{
+    min-height: 60vh;
+}
+
+#content .content-section{
+    width: 800px;
+    max-width: 100%;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}  
+
+#content .section-heading{
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+}
+#content .section-sub-heading{
+    text-align: center;
+    font-style: italic;
+    opacity: 0.6;
+    margin-top: 20px;
+}
+#content .text-about{
+    text-align: justify;
+    margin-top: 20px;
+    line-height: 1.6;
+    padding: 40px 0px;
+}
+#content .member-item{
+    float: left;
+    width:calc(100%/3);
+    text-align: center;
+}
+#content .name{
+    font-size: 1rem;
+    
+}
+#content .member-img{
+    margin-top: 20px;
+    border-radius: 10%;
+    width: 150px;
+}
+
+.tour-section{
+    background-color: black;
+    color: white;
+}
+.ticket{
+    list-style: none;
+    background-color: white;
+    color: black;
+    margin-top: 40px;
+    box-shadow: 0 0 10px white;
+}
+.ticket li{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    border-bottom: 2px solid black;
+}
+
+.place-list{
+    margin-top: 50px;
+    margin-bottom: 60px;
+    color: black;
+    font-size: 16px;
+}
+
+.place-img{
+    width: 100%;
+    display: block;
+}
+.place-item img:hover{
+    opacity: .5;
+}
+.place-body{
+    background-color: white;
+    padding: 10px;
+}
+
+.btn{
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    padding: 8px 10px;
+    display: inline-block;
+    margin-top: 10px;
+    border: none;
+}
+.btn:hover{
+    color: black;
+    background-color: #ccc;
+}
+
+
+.map {
+    margin:52px 0 0 0;
+}
+.map img{
+    width: 100%;
+    background-attachment: fixed;
+}
+/*---content
+
+/* ---contact-------*/
+#contact {
+    padding: 2rem 4rem;
+    height: 60vh;
+    width: 100%;
+    margin-top: 2rem;
+}
+.contact-title {
+    margin-top: 30px;
+    font-size: 3rem;
+    text-align: center;
+}
+.contact-description {
+    font-size: 2rem;
+    text-align: center;
+}
+.contact-info{
+    margin-top: 40px;
+}
+.contact-text{
+    width: 100%;
+    padding:  4px 0;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.contact-info p{
+    line-height: 2;
+}
+/* ---contact-------*/
+
+/*------footer-------*/
+.footer {
+    padding:2rem 4rem;
+}
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info, .policy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info .title .icon{
+    display: flex;
+}
+
+.policy {
+
+}
+/*------footer-------*/
+
+/* Start-BackTop */
+.backtop {
+    
+}
+.back-to-top{
+    font-size: 2rem;
+    color: var(--text-color);
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10%;
+    right: 10px;
+    width: 40px;
+    min-height: 35px;
+    border-radius: .1rem;
+    background-color: rgba(171, 228, 228, 0.9);
+    display: none;
+}
+.back-to-top i{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+}
+/* End-BackTop */
+
+/* Start-Connect */
+.connect{
+    position: fixed;
+    top: 20%;
+    right: 10px;
+    width: 40px;
+    display: block;
+    min-height: 160px;
+    border-radius: 3rem;
+    background-color: rgba(171, 228, 228, 0.9);
+    padding: 1rem 0;
+}
+.connect a{
+    text-decoration: none;
+}
+
+.connect a i{
+    font-size: 1.4rem;
+    color: var(--black-color);
+    padding: 4px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+.connect a i:hover{
+    transform: scale(1.2);
+}
+/* End-Connect */
+
+/*------Modal-----*/
+.modal{
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    
+}
+.modal.open{
+    display: flex;
+   
+}
+.modal-container{
+    position: relative;
+    background-color: white;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    animation: modalFadein ease .6s;
+}
+.modal-head{
+    background-color:turquoise;
+}
+.modal-container .close{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    opacity: 0.8;
+    padding: 12px;
+    cursor: pointer;
+}
+.modal-container .close:hover{
+    opacity: 1;
+    background-color: gray;
+    
+
+}
+.modal-header{
+    background-color: turquoise;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+}
+.modal-header i{
+    margin-right: 10px;
+}
+.modal-body{
+    padding: 20px;
+}    
+.modal-body .modal-label{
+    display: block;
+    margin-bottom: 10px;
+    
+}
+.modal-body .modal-input{
+    font-size: 16px;
+    padding: 10px;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+
+}
+#buy-ticket{
+    width: 100%;
+    background-color: turquoise;
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    border: none;
+}
+#buy-ticket:hover{
+    background-color: gray;
+    color: black;
+    border: none;
+}
+.modal-body .modal-footer{
+    float: right;
+    margin-top: 10px;
+}
+/*------Modal-----*/
